@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="133.796" tests="7" skipped="0" failures="3" errors="0">
+<testcase classname="User Login" name="Successful login with valid credentials" time="23.576">
+<system-out><![CDATA[
+When I am on the login page.................................................passed
+And I accept cookies........................................................passed
+And I enter a valid email "kitsos212@test.com"..............................passed
+And I click the continue button.............................................passed
+And I enter a valid password "Marcfit21@"...................................passed
+And I click the login button................................................passed
+Then I should be logged in successfully.....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="User Login" name="UnSuccessful login with invalid email" time="5.479">
+<system-out><![CDATA[
+And I refresh the page......................................................passed
+And I enter a invalid email "kitsos21@invalidemail.com".....................passed
+And I click the continue button.............................................passed
+And I enter a valid password "Marcfit21@"...................................passed
+And I click the login button................................................passed
+Then I should not be logged in successfully.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="User Login" name="UnSuccessful login with invalid password" time="3.453">
+<system-out><![CDATA[
+And I refresh the page......................................................passed
+And I enter a valid email "kitsos212@test.com"..............................passed
+And I click the continue button.............................................passed
+And I enter a invalid password "InvalidPassword"............................passed
+And I click the login button................................................passed
+Then I should not be logged in successfully.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="User upload image functionality" name="Successful upload an image file(png)" time="13.31">
+<system-out><![CDATA[
+When I navigate to the first open tab.......................................passed
+And I am on the login page..................................................passed
+And I refresh the page......................................................passed
+And I enter a valid email "kitsos212@test.com"..............................passed
+And I click the continue button.............................................passed
+And I enter a valid password "Marcfit21@"...................................passed
+And I click the login button................................................passed
+Then I should be logged in successfully.....................................passed
+When I navigate to image subsection and try to upload an image..............passed
+]]></system-out>
+</testcase>
+<testcase classname="User upload image functionality" name="Adding image settings in order to ensure that values will be updated" time="17.465">
+<failure type="org.junit.ComparisonFailure" message="expected:&lt;[HappyNewYear.webp]&gt; but was:&lt;[]&gt;">
+<![CDATA[org.junit.ComparisonFailure: expected:<[HappyNewYear.webp]> but was:<[]>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at stepDefinitions.mediasteps.AddAnImage.checkTheUpdatedValues(AddAnImage.java:69)
+	at ✽.I save the updated values and check if everything updated as expected with name "HappyNewYear.webp", description "KitsosSET", and duration "7"(file:///C:/Users/georg/Downloads/Yodeck%20(1)/Yodeck/src/test/java/features/media/UploadAnImage.feature:25)
+]]>
+</failure>
+<system-out><![CDATA[
+When I try to add some "Kitsos" description.................................passed
+And I try to add "7" as a default duration..................................passed
+And I try to add some "test" tags...........................................passed
+And I try to update the from availability...................................passed
+Then I save the updated values and check if everything updated as expected with name "HappyNewYear.webp", description "KitsosSET", and duration "7".failed
+]]></system-out>
+</testcase>
+<testcase classname="User upload image functionality" name="Unsuccessful upload an image file(html)" time="24.24">
+<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for visibility of element located by By.cssSelector: #upload_image_file [data-error='image'] (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.204 (52183f9e99a..., userDataDir: C:\Users\georg\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58264}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58264/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 93e045c5ae4dbab0daba7f02ff563f51">
+<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.cssSelector: #upload_image_file [data-error='image'] (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.204 (52183f9e99a..., userDataDir: C:\Users\georg\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58264}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58264/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 93e045c5ae4dbab0daba7f02ff563f51
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at utils.WaitHelper.waitForVisibilityOfElement(WaitHelper.java:24)
+	at pages.ImagePage.getErrorMessage(ImagePage.java:211)
+	at stepDefinitions.mediasteps.AddAnImage.errorMessageForInValidImageType(AddAnImage.java:25)
+	at ✽.I see an error message related to unsupported type should be displayed(file:///C:/Users/georg/Downloads/Yodeck%20(1)/Yodeck/src/test/java/features/media/UploadAnImage.feature:30)
+]]>
+</failure>
+<system-out><![CDATA[
+When I navigate to image subsection and try to upload an unsupported image type.passed
+Then I see an error message related to unsupported type should be displayed.failed
+]]></system-out>
+</testcase>
+<testcase classname="User upload image functionality" name="Importing a photo from URL" time="42.654">
+<failure type="java.lang.RuntimeException" message="org.openqa.selenium.TimeoutException: Expected condition failed: waiting for url to be &quot;https://app.yodeck.com/index.html#main/image/new&quot;. Current url: &quot;https://app.yodeck.com/index.html#main/image&quot; (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.204 (52183f9e99a..., userDataDir: C:\Users\georg\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58264}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58264/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 93e045c5ae4dbab0daba7f02ff563f51">
+<![CDATA[java.lang.RuntimeException: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for url to be "https://app.yodeck.com/index.html#main/image/new". Current url: "https://app.yodeck.com/index.html#main/image" (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.204 (52183f9e99a..., userDataDir: C:\Users\georg\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58264}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58264/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 93e045c5ae4dbab0daba7f02ff563f51
+	at pages.ImagePage.addSomeDescription(ImagePage.java:101)
+	at stepDefinitions.mediasteps.AddAnImage.testFunctionality(AddAnImage.java:37)
+	at ✽.I try to add some "KitsosDescriptionPhotoFromUrl" description(file:///C:/Users/georg/Downloads/Yodeck%20(1)/Yodeck/src/test/java/features/media/UploadAnImage.feature:36)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for url to be "https://app.yodeck.com/index.html#main/image/new". Current url: "https://app.yodeck.com/index.html#main/image" (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.204 (52183f9e99a..., userDataDir: C:\Users\georg\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58264}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58264/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 93e045c5ae4dbab0daba7f02ff563f51
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at utils.WaitHelper.waitForUrlToBe(WaitHelper.java:29)
+	at pages.ImagePage.addSomeDescription(ImagePage.java:94)
+	at stepDefinitions.mediasteps.AddAnImage.testFunctionality(AddAnImage.java:37)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:62)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:81)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:53)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.lambda$run$0(PickleRunners.java:151)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:136)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:136)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:148)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:144)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:28)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at io.cucumber.junit.FeatureRunner.run(FeatureRunner.java:137)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:196)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:89)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runFeatures$6(CucumberExecutionContext.java:147)
+	at io.cucumber.core.runtime.CucumberExecutionContext.execute(CucumberExecutionContext.java:162)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runFeatures(CucumberExecutionContext.java:145)
+	at io.cucumber.junit.Cucumber$StartAndFinishTestRun.evaluate(Cucumber.java:226)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+]]>
+</failure>
+<system-out><![CDATA[
+When I navigate back to the image importing and try to upload a photo from a url.passed
+And I try to add some "KitsosNamePhotoFromUrl" name.........................passed
+And I try to add some "KitsosDescriptionPhotoFromUrl" description...........failed
+And I try to add "17" as a default duration.................................skipped
+And I try to add some "testTagFromImportPhoto" tags.........................skipped
+And I try to update the from availability...................................skipped
+]]></system-out>
+</testcase>
+</testsuite>

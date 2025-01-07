@@ -1,0 +1,7 @@
+pages\LoginPage.class
+pages\HomePage.class
+utils\WaitHelper.class
+pages\RegistrationPage.class
+pages\WelcomePage.class
+utils\ConfigReader.class
+pages\ImagePage.class

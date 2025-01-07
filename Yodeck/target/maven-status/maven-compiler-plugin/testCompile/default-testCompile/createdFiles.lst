@@ -1,0 +1,6 @@
+stepDefinitions\mediasteps\AddAnImage.class
+testRunner\TestRunner.class
+stepDefinitions\loginsteps\LoginSteps.class
+stepDefinitions\registrationsteps\RegistrationSteps.class
+Hooks\Hooks.class
+base\BaseTests.class
